@@ -1,0 +1,79 @@
+/* Main image section */
+.main-container {
+    margin-top: 50px;
+    margin-left: auto; /* Center align horizontally */
+    margin-right: auto; /* Center align horizontally */
+    max-width: 1200px; /* Adjust as needed */
+}
+
+.big-image-container {
+    position: relative;
+    max-width: 100%;
+    height: auto;
+    overflow: hidden; /* Ensure child elements don't exceed container */
+}
+
+.big-image {
+    max-width: 100%; /* Ensure image scales with its container */
+    height: auto;
+    display: block;
+    object-fit: cover; /* Maintain aspect ratio and cover container */
+}
+
+.small-images-container {
+    display: flex;
+    flex-wrap: wrap; /* Ensure small images wrap on smaller screens */
+    justify-content: space-between; /* Evenly distribute space between small images */
+    margin-top: 20px; /* Space between big image and small images */
+}
+
+.small-image-container {
+    width: calc(50% - 10px); /* Calculate width minus margin for spacing */
+    margin-bottom: -20px; /* Space between rows of small images */
+}
+
+.small-image {
+    width: 80%; /* Each small image takes full width of its container */
+    height: 50%; /* Maintain aspect ratio */
+}
+
+/* Desktop layout adjustments */
+@media (min-width: 768px) {
+    .small-images-container {
+        flex-direction: column; /* Stack images vertically on desktop */
+        align-items: flex-start; /* Align small images to the start */
+    }
+
+    .small-image-container {
+        width: 100%; /* Full width for small image containers */
+        margin-bottom: 20px; /* Space between rows of small images */
+    }
+
+    .small-image {
+        max-height: calc(50vh - 20px); /* Adjust height to match big image height */
+    }
+}
+
+
+
+
+/* Ensure images take full width on small screens */
+@media (max-width: 767.98px) {
+    .big-image {
+        margin-bottom: 20px;
+    }
+    .big-image,
+    .small-image {
+        width: 100%; /* Make images full width */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    .small-images-container {
+        width: 100%; /* Full width for small images container */
+        height: auto; /* Adjust as needed */
+    }
+
+    .small-image {
+        width: 100%; /* Full width for small images */
+    }
+}
